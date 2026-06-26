@@ -5,6 +5,12 @@ body {
   color: white;
   text-align: center;
   overflow: hidden;
+
+  /* Centralização com flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ocupa toda a altura da tela */
 }
 
 /* Estrelas animadas em CSS puro */
@@ -37,6 +43,8 @@ body {
 
 .screen {
   padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* leve fundo translúcido */
+  border-radius: 12px;
 }
 
 .hidden {
