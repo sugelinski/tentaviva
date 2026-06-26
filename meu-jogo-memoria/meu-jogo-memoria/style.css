@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at bottom, #011c36, #000);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Estrelas animadas em CSS puro */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  z-index: -1;
+  background: transparent;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow: 
+    50px 100px white, 150px 200px white, 300px 400px white,
+    500px 250px white, 700px 150px white, 900px 350px white,
+    200px 600px white, 400px 700px white, 600px 500px white;
+  animation: twinkle 6s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(-20px); }
+}
+
+.screen {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background: #003366;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  cursor: pointer;
+  color: transparent;
+  transition: transform 0.3s;
+}
+
+.card.flipped {
+  background: #00aaff;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+#scoreboard {
+  margin: 15px;
+  font-size: 1.2em;
+  color: #00ccff;
+}

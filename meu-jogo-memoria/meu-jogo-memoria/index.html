@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tᕼᕮ ᗰᕮᗰOᖇY Sᑭᗩᑕᕮ Ｇᗩᗰᕮ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de Login -->
+  <div id="login-screen" class="screen">
+    <h1>Tᕼᕮ ᗰᕮᗰOᖇY Sᑭᗩᑕᕮ Ｇᗩᗰᕮ</h1>
+    <p>Digite os nomes dos jogadores:</p>
+    <input type="text" id="player1" placeholder="Jogador 1">
+    <input type="text" id="player2" placeholder="Jogador 2">
+    <button onclick="startGame()">Iniciar</button>
+    <button onclick="showTutorial()">Tutorial</button>
+    <button onclick="showHelp()">Ajuda</button>
+  </div>
+
+  <!-- Tela de Tutorial -->
+  <div id="tutorial-screen" class="screen hidden">
+    <h2>🚀 Tutorial</h2>
+    <p>Combine pares de cartas iguais. Cada jogador joga alternadamente. Quem fizer mais pares vence!</p>
+    <button onclick="backToLogin()">Voltar</button>
+  </div>
+
+  <!-- Tela de Ajuda -->
+  <div id="help-screen" class="screen hidden">
+    <h2>❓ Ajuda</h2>
+    <p>Clique em duas cartas para tentar formar um par. Boa sorte!</p>
+    <button onclick="backToLogin()">Voltar</button>
+  </div>
+
+  <!-- Tela do Jogo -->
+  <div id="game-screen" class="screen hidden">
+    <h2 id="turn-info"></h2>
+    
+    <!-- Placar -->
+    <div id="scoreboard">
+      <span id="score1">Jogador 1: 0</span> | 
+      <span id="score2">Jogador 2: 0</span>
+    </div>
+
+    <div id="game-board" class="board"></div>
+    <button onclick="nextLevel()">Próximo Nível</button>
+    <button onclick="backToLogin()">Sair</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
